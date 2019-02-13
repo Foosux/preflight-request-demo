@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cros</title>
+  <script>
+    // document.cookie = "age=18"
+  </script>
+</head>
+<body>
+  <div id='show'>返回数据：</div>
+
+  <script src="https://s1.ljcdn.com/pegasus/redskull/deps/jquery_lj_0_1.js?_v=20190124175810362"></script>
+  <script>
+    $(function () {
+      $.ajax({
+        url: "http://hi.lianjia.com:8888/api/getList",
+        method: 'POST',
+        data: {
+          id: 1000001
+        },
+        headers: {
+          // 存在自定义头时，为复杂请求，会发送option预检请求；若注释掉则为简单请求
+          'yourHeaderFeild': 'myHeader'
+        },
+        xhrFields: {
+          // 携带跨域cookie
+          // server端需同步设置 Access-Control-Allow-Credentials 为 true 且 Access-Control-Allow-Origi 与请求的一致
+          withCredentials: true
+        },
+        success: function( result ) {
+          console.log('返回数据：', result)
+          $('#show').append(`<span style="color:red">${result.msg}</span>`)
+        }
+      })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "preflight-request-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:client": "node client/app.js",
+    "start:server": "node crosServer/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foosux/preflight-request-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Foosux/preflight-request-demo/issues"
+  },
+  "homepage": "https://github.com/Foosux/preflight-request-demo#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "nunjucks": "^3.1.7"
+  }
+}
