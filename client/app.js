@@ -5,7 +5,6 @@
 const Koa = require('koa');
 // 使用中间件进行路由控制
 const controller = require('./routerController');
-console.log(98765, controller)
 // 解析post请求中的body
 const bodyParser = require('koa-bodyparser');
 
