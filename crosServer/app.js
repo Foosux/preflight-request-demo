@@ -43,8 +43,8 @@ router.get('/', async (ctx, next) => {
   ctx.response.body = `<h1>crosServer启动成功 <br/> 提供 POST方法的 <span style="color: red;">/api/getList</span> 数据</h1>`
 })
 
-// 解析body，必须在 router 前
-// app.use(bodyParser());
+// 解析请求中的 body，必须在 router 前
+app.use(bodyParser());
 
 // add router middleware:
 app.use(router.routes());
