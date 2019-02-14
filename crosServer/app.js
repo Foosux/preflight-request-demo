@@ -14,7 +14,8 @@ const app = new Koa();
 app.use(async (ctx, next)=> {
   // 允许客户端携带跨域cookie，此时origin值不能为“*”，只能为指定单一域名
   ctx.set('Access-Control-Allow-Credentials', true);
-  ctx.set('Access-Control-Allow-Origin', '*');
+  // ctx.set('Access-Control-Allow-Origin', '*');
+  ctx.set('Access-Control-Allow-Origin', 'http://0.0.0.0:7777');
   console.log('请求携带的cookie：', ctx.get('cookie'))
 
   ctx.set('Access-Control-Allow-Headers', 'Content-Type, yourHeaderFeild');
@@ -43,7 +44,7 @@ router.get('/', async (ctx, next) => {
 })
 
 // 解析body，必须在 router 前
-app.use(bodyParser());
+// app.use(bodyParser());
 
 // add router middleware:
 app.use(router.routes());
